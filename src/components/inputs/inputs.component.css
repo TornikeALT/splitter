@@ -1,0 +1,258 @@
+.bill,
+.people {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 8px 0;
+}
+
+.title {
+    color: var(--dark-grayish-cyan)
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.tip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.percentage {
+    background-color: var(--very-dark-cyan);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 0;
+    border-radius: 8px;
+    font-size: 1.6rem;
+    transition: ease 0.3s;
+}
+
+.custom {
+    text-align: right;
+    padding-right: 12px;
+    width: 100%;
+    font-size: 1.8rem;
+    background: var(--very-light-grayish-cyan);
+    border: 2px solid transparent;
+    border-radius: 8px;
+    transition: ease 0.3s;
+}
+
+.custom:hover {
+    cursor: pointer;
+    border: 2px solid var(--strongcyan);
+}
+
+.inputs {
+    display: flex;
+    justify-content: space-between;
+    max-width: 900px;
+    padding: 33px;
+    margin: 8rem auto;
+    background-color: var(--white);
+    gap: 3rem;
+    min-height: 35vh;
+    border-radius: 8px;
+}
+
+.total {
+    background-color: var(--very-dark-cyan);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-radius: 8px;
+}
+
+.tip_person,
+.total_person {
+    padding: 1rem 0;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left_side {
+    flex: 1;
+}
+
+.tips_title_color {
+    color: white;
+    font-size: 20px;
+}
+
+.person {
+    color: var(--grayish-cyan);
+}
+
+
+.numbers {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.numbers img {
+    width: 20px;
+    height: auto;
+}
+
+.numbers span {
+    font-size: 40px;
+    color: var(--strongcyan);
+}
+
+.pays {
+    padding: 0 2rem;
+}
+
+.reset_btn {
+    margin: 0 2rem;
+    background-color: var(--strongcyan);
+    font-size: 1.5rem;
+    padding: 8px 0;
+    letter-spacing: 2px;
+    border-radius: 8px;
+    border: none;
+    color: var(--very-dark-cyan);
+    transition: ease 0.3s;
+}
+
+.reset_btn:hover {
+    cursor: pointer;
+    background-color: var(--light-grayish-cyan);
+}
+
+.bill input,
+.people input {
+    width: 100%;
+    background: var(--very-light-grayish-cyan);
+    border: 2px solid transparent;
+    padding: 10px 14px;
+    border-radius: 8px;
+    text-align: right;
+    font-size: 1.5rem;
+    color: var(--grayish-cyan);
+    transition: ease 0.3s;
+}
+
+.bill input:hover,
+.people input:hover {
+    border: 2px solid var(--strongcyan);
+    cursor: pointer;
+}
+
+.bill {
+    position: relative;
+}
+
+.bill img,
+.people img {
+    position: absolute;
+    left: 8px;
+    bottom: 20%;
+}
+
+.tip_container {
+    margin-top: 3rem;
+}
+
+.people {
+    margin-top: 3rem;
+    position: relative;
+}
+
+.people label {
+    margin-bottom: 10px;
+}
+
+
+.bill input:focus,
+.people input:focus {
+    color: var(--very-dark-cyan)
+}
+
+.title_wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%
+}
+
+.warning {
+    color: red
+}
+
+.warning_border {
+    border: 2px solid red !important;
+}
+
+.percentage:hover {
+    background-color: var(--strongcyan);
+    cursor: pointer;
+    color: black
+}
+
+.active {
+    background-color: var(--strongcyan);
+}
+
+
+/* RESPONSIVE */
+@media(max-width:788px) {
+    .inputs {
+        flex-direction: column;
+    }
+
+    .tip {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .percentage {
+        font-size: 2.8rem;
+    }
+
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .total {
+        padding-bottom: 2rem;
+    }
+
+}
+
+@media(max-width:475px) {
+    .percentage {
+        font-size: 1.8rem;
+    }
+
+    .title {
+        font-size: 1rem;
+    }
+
+    .tips_title_color {
+        font-size: 15px;
+    }
+
+    .numbers span {
+        font-size: 25px;
+    }
+
+    .numbers img {
+        max-width: 15px;
+    }
+}

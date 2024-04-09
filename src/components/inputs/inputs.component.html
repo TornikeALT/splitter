@@ -1,0 +1,117 @@
+<div class="inputs">
+  <div class="left_side">
+    <div class="bill">
+      <label for="bill" class="title">Bill</label>
+      <img src="assets/images/icon-dollar-nocolor.svg" alt="dollar sign" />
+      <input
+        type="number"
+        id="bill"
+        name="bill"
+        [(ngModel)]="billValue"
+        (input)="handleBillValueChange()"
+      />
+    </div>
+    <div class="tip_container">
+      <span class="title">Select Tip %</span>
+      <div class="tip">
+        <div
+          class="percentage"
+          (click)="handleTipClick(5)"
+          [ngClass]="{ active: tipClicked === 5 }"
+        >
+          5%
+        </div>
+        <div
+          class="percentage"
+          (click)="handleTipClick(10)"
+          [ngClass]="{ active: tipClicked === 10 }"
+        >
+          10%
+        </div>
+        <div
+          class="percentage"
+          (click)="handleTipClick(15)"
+          [ngClass]="{ active: tipClicked === 15 }"
+        >
+          15%
+        </div>
+        <div
+          class="percentage"
+          (click)="handleTipClick(25)"
+          [ngClass]="{ active: tipClicked === 25 }"
+        >
+          25%
+        </div>
+        <div
+          class="percentage"
+          (click)="handleTipClick(50)"
+          [ngClass]="{ active: tipClicked === 50 }"
+        >
+          50%
+        </div>
+
+        <input
+          #customInput
+          type="{{ isCustomInput ? 'number' : 'text' }}"
+          class="custom"
+          placeholder="Custom"
+          [(ngModel)]="customValue"
+          (focus)="isCustomInput = true"
+          (blur)="isCustomInput = false"
+          (input)="handleCustomInput()"
+        />
+      </div>
+    </div>
+    <div class="people">
+      <div class="title_wrapper">
+        <label for="people" class="title">Number of People</label>
+        <span
+          class="warning"
+          *ngIf="(personTouched && person === 0) || !persons.value.trim()"
+          >Can`t be zero</span
+        >
+      </div>
+      <img src="assets/images/icon-person.svg" alt="dollar sign" />
+      <input
+        class="border_test"
+        [class.warning_border]="
+          (personTouched && person === 0) || !persons.value.trim()
+        "
+        #persons
+        type="number"
+        name="people"
+        id="people"
+        [(ngModel)]="person"
+        (input)="handlePeopleChange()"
+      />
+    </div>
+  </div>
+  <div class="total">
+    <div class="pays">
+      <div class="tip_person">
+        <span class="tips_title_color"
+          >Tip Amount <br />
+          <span class="person">/person</span>
+        </span>
+        <div class="numbers">
+          <img src="assets/images/icon-dollar.svg" alt="dollar sign" />
+          <span class="numbers"> {{ tipAmountPerson | number : '1.2-2' }}</span>
+        </div>
+      </div>
+      <div class="total_person">
+        <span class="tips_title_color"
+          >Total
+          <br />
+          <span class="person">/person</span>
+        </span>
+        <div class="numbers">
+          <img src="assets/images/icon-dollar.svg" alt="dollar sign" />
+          <span class="total_amount_person">
+            {{ totalAmountPerson | number : '1.2-2' }}</span
+          >
+        </div>
+      </div>
+    </div>
+    <button class="reset_btn" (click)="handleReset()">RESET</button>
+  </div>
+</div>

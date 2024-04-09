@@ -1,0 +1,16 @@
+.main h1 {
+    text-align: center;
+}
+
+.main {
+    max-width: 1200px;
+    margin: 10rem auto;
+    padding: 12px;
+}
+
+@media (max-width:788px) {
+    .main {
+        margin: 5rem auto;
+    }
+
+}
